@@ -8,7 +8,9 @@ main:
     push    {ip, lr}
 
     @ Load the argument and perform the call. This is like 'printf("...")' in C.
-    ldr     r0, = haiku
+    ldr     r0, = haiku1
+    ldr     r1, = haiku2
+    ldr     r2, = haiku3
     bl      printf
 
     @ Exit from 'main'. This is like 'return 0' in C.
@@ -22,6 +24,9 @@ main:
     @ automatically adds a NULL character termination.
 message:
     .asciz  "Hello, world.\n"
-haiku:
-    .asciz "A small computer\n Inside the palm of my hand\n Capable of much\n"
-
+haiku1:
+    .asciz "A small computer\n"
+haiku2:
+    .asciz "Inside the palm of my hand\n"
+haiku3::
+    .asciz "Capable of much"
